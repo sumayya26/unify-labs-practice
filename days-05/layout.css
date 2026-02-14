@@ -1,0 +1,56 @@
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  height: 100vh;
+  background: url("../assets/hero.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.hero-content p {
+  margin-top: 10px;
+}
+
+.hero-content .cta-btn {
+  margin-top: 30px;
+}
+
+.section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
