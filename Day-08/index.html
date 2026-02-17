@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumayya Harmain | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --bg: #0f172a;
+  --card: rgba(255,255,255,0.05);
+  --text: #ffffff;
+  --primary: #7c3aed;
+  --secondary: #06b6d4;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #1e293b, #0f172a, #1e1b4b, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= NAVBAR ================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--secondary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 100px 8%;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* ================= BUTTONS ================= */
+.glow-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #7c3aed, #06b6d4);
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 15px #7c3aed;
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 30px #06b6d4, 0 0 60px #7c3aed;
+  transform: scale(1.05);
+}
+
+/* ================= GLASS CARD ================= */
+.card {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* ================= SKILLS ================= */
+.skills-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 10px;
+  background: #1e293b;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  animation: load 2s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+}
+
+/* ================= PROJECTS ================= */
+.projects-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ================= CONTACT ================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.contact-form button {
+  margin-top: 10px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 768px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">Sumayya</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="section hero" id="about">
+  <h1>Hi, I'm Sumayya 👋</h1>
+  <p>Frontend Developer | DevOps Enthusiast | Problem Solver</p>
+  <button class="glow-btn">Download Resume</button>
+</section>
+
+<section class="section" id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-grid">
+
+    <div class="card">
+
+      <p>HTML5</p>
+      <div class="progress"><span style="width:95%"></span></div>
+
+      <p>CSS3</p>
+      <div class="progress"><span style="width:90%"></span></div>
+
+      <p>JavaScript</p>
+      <div class="progress"><span style="width:80%"></span></div>
+
+      <p>Responsive Design</p>
+      <div class="progress"><span style="width:88%"></span></div>
+
+      <p>Git & GitHub</p>
+      <div class="progress"><span style="width:85%"></span></div>
+
+      <p>Linux Basics</p>
+      <div class="progress"><span style="width:75%"></span></div>
+
+      <p>CI/CD Concepts</p>
+      <div class="progress"><span style="width:70%"></span></div>
+
+      <p>Jenkins</p>
+      <div class="progress"><span style="width:65%"></span></div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="card project-card">
+      <img src="https://via.placeholder.com/400x250" alt="">
+      <p>Responsive Navbar Component</p>
+    </div>
+
+    <div class="card project-card">
+      <img src="https://via.placeholder.com/400x250" alt="">
+      <p>Animated Button Collection</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact Me</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button class="glow-btn">Send Message</button>
+  </form>
+</section>
+
+
+</main>
+
+<footer>
+  <p>© 2026 Sumayya Harmain</p>
+</footer>
+
+</body>
+</html>
