@@ -1,0 +1,155 @@
+/* ============ GLOBAL ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg,#f9fafb,#e5e7eb);
+  color: #111;
+}
+
+/* ============ AUTH CONTAINER ============ */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login Card */
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* ============ FLOATING LABEL INPUTS ============ */
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.input-group label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 14px;
+  color: #777;
+  transition: 0.3s;
+  pointer-events: none;
+  background: white;
+  padding: 0 5px;
+}
+
+/* Floating Effect */
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -8px;
+  font-size: 12px;
+  color: #0095f6;
+}
+
+/* Focus Glow */
+.input-group input:focus {
+  border-color: #0095f6;
+  box-shadow: 0 0 8px rgba(0,149,246,0.3);
+}
+
+/* ============ BUTTON ============ */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg,#0095f6,#0077cc);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,149,246,0.4);
+}
+
+/* ============ TEAM SECTION ============ */
+.team-section {
+  padding: 80px 8%;
+  background: #f3f4f6;
+  text-align: center;
+}
+
+.team-section h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+}
+
+/* Profile Card */
+.profile-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.profile-card img {
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.profile-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.profile-card:hover .overlay {
+  opacity: 1;
+}
+
+.socials {
+  margin-top: 10px;
+  font-size: 20px;
+}
