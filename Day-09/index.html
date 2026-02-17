@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Card Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+  color:white;
+  padding:60px 8%;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:60px;
+  font-size:2.5rem;
+  background:linear-gradient(90deg,#7c3aed,#06b6d4);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  margin-bottom:100px;
+}
+
+.card{
+  border-radius:20px;
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+/* ================= 3D FLIP CARD ================= */
+.flip-card{
+  perspective:1000px;
+}
+
+.flip-inner{
+  position:relative;
+  width:100%;
+  height:220px;
+  transform-style:preserve-3d;
+  transition:transform 0.8s;
+}
+
+.flip-card:hover .flip-inner{
+  transform:rotateY(180deg);
+}
+
+.flip-front,.flip-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border-radius:20px;
+}
+
+.flip-front{
+  background:#1e293b;
+}
+
+.flip-back{
+  background:linear-gradient(135deg,#7c3aed,#06b6d4);
+  transform:rotateY(180deg);
+}
+
+/* ================= GLASS CARD ================= */
+.glass-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.progress{
+  height:8px;
+  background:#334155;
+  border-radius:10px;
+  margin-top:20px;
+  overflow:hidden;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,#7c3aed,#06b6d4);
+  animation:load 2s ease forwards;
+}
+
+@keyframes load{
+  from{width:0}
+}
+
+/* ================= GRADIENT BORDER CARD ================= */
+.border-card{
+  background:#1e293b;
+  position:relative;
+  z-index:1;
+}
+
+.border-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:22px;
+  background:linear-gradient(45deg,#7c3aed,#06b6d4,#ec4899,#7c3aed);
+  background-size:400%;
+  z-index:-1;
+  animation:borderMove 6s linear infinite;
+}
+
+@keyframes borderMove{
+  0%{background-position:0%}
+  100%{background-position:400%}
+}
+
+.border-card img{
+  width:100%;
+  border-radius:15px;
+  margin:15px 0;
+  transition:0.4s;
+}
+
+.border-card img:hover{
+  transform:scale(1.1);
+}
+
+/* ================= HOVER EFFECT ================= */
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* ================= FAQ SECTION ================= */
+.faq{
+  max-width:700px;
+  margin:auto;
+}
+
+.faq h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2rem;
+}
+
+.accordion{
+  margin-bottom:20px;
+}
+
+.accordion input{
+  display:none;
+}
+
+.accordion label{
+  display:block;
+  padding:15px;
+  background:#1e293b;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.accordion label:hover{
+  background:#334155;
+}
+
+.content{
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s ease;
+  padding:0 15px;
+}
+
+.accordion input:checked ~ .content{
+  max-height:200px;
+  padding:15px;
+  background:#0f172a;
+  border-radius:0 0 10px 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Dashboard Card Collection</h1>
+
+<div class="grid">
+
+  <!-- 3D FLIP CARD -->
+  <div class="card flip-card">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <h3>Frontend</h3>
+        <p>Hover to flip</p>
+      </div>
+      <div class="flip-back">
+        <h3>Skills</h3>
+        <p>HTML • CSS • JavaScript</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLASS CARD -->
+  <div class="card glass-card">
+    <h3>Project Progress</h3>
+    <p>UI Development</p>
+    <div class="progress">
+      <span style="width:85%"></span>
+    </div>
+  </div>
+
+  <!-- GRADIENT BORDER CARD -->
+  <div class="card border-card">
+    <h3>Design Preview</h3>
+    <img src="https://via.placeholder.com/400x200" alt="">
+    <p>Animated gradient border with zoom effect.</p>
+  </div>
+
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="accordion">
+    <input type="checkbox" id="q1">
+    <label for="q1">What is CSS Grid?</label>
+    <div class="content">
+      CSS Grid is a powerful two-dimensional layout system for web design.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <input type="checkbox" id="q2">
+    <label for="q2">What is Glassmorphism?</label>
+    <div class="content">
+      A design style using transparency and blur effects.
+    </div>
+  </div>
+
+  <div class="accordion">
+    <input type="checkbox" id="q3">
+    <label for="q3">What is 3D Transform?</label>
+    <div class="content">
+      CSS transforms that allow rotation and perspective effects.
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
