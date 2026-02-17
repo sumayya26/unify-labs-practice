@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Orbitron',sans-serif;
+  background:#0f0f1a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ================= PARTICLE BACKGROUND ================= */
+.particles{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+
+.particles span{
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:#00f7ff;
+  border-radius:50%;
+  animation: float 10s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes float{
+  from{
+    transform:translateY(100vh) scale(0.5);
+  }
+  to{
+    transform:translateY(-10vh) scale(1);
+  }
+}
+
+/* Generate different positions */
+.particles span:nth-child(odd){
+  background:#ff00ff;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+/* ================= NEON TEXT ================= */
+.neon{
+  font-size:4rem;
+  color:#00f7ff;
+  text-shadow:
+    0 0 5px #00f7ff,
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker{
+  0%{opacity:1;}
+  50%{opacity:0.8;}
+  100%{opacity:1;}
+}
+
+/* ================= TYPEWRITER ================= */
+.typewriter{
+  overflow:hidden;
+  border-right:2px solid #00f7ff;
+  white-space:nowrap;
+  width:0;
+  margin-top:20px;
+  animation: typing 4s steps(30) forwards,
+             blink 0.7s infinite;
+}
+
+@keyframes typing{
+  to{width:100%;}
+}
+
+@keyframes blink{
+  50%{border-color:transparent;}
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  margin-top:40px;
+  padding:15px 40px;
+  background:transparent;
+  border:2px solid #00f7ff;
+  color:#00f7ff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#00f7ff;
+  color:#0f0f1a;
+  box-shadow:0 0 20px #00f7ff;
+}
+
+/* ================= MODAL ================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+
+.modal-content{
+  background:#1a1a2e;
+  padding:40px;
+  border-radius:15px;
+  text-align:center;
+  width:90%;
+  max-width:400px;
+}
+
+.modal input{
+  width:100%;
+  padding:10px;
+  margin-top:20px;
+}
+
+.modal button{
+  margin-top:20px;
+  padding:10px 20px;
+}
+
+/* ================= GALLERY ================= */
+.gallery{
+  padding:100px 8%;
+  columns:3 250px;
+  column-gap:20px;
+}
+
+.gallery img{
+  width:100%;
+  margin-bottom:20px;
+  border-radius:10px;
+  filter:grayscale(100%);
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  filter:grayscale(0%);
+  transform:scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .neon{font-size:2.5rem;}
+  .gallery{columns:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PARTICLES -->
+<div class="particles">
+  <!-- 25 particles -->
+  <script>
+    for(let i=0;i<25;i++){
+      let span=document.createElement("span");
+      span.style.left=Math.random()*100+"vw";
+      span.style.animationDuration=(5+Math.random()*10)+"s";
+      document.querySelector(".particles").appendChild(span);
+    }
+  </script>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="neon">COMING SOON</h1>
+  <h2 class="typewriter">Something amazing is launching soon...</h2>
+  <button class="btn" onclick="openModal()">Notify Me</button>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Get Notified</h3>
+    <input type="email" placeholder="Enter your email">
+    <button onclick="closeModal()">Submit</button>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <img src="https://picsum.photos/400/300?1">
+  <img src="https://picsum.photos/400/500?2">
+  <img src="https://picsum.photos/400/350?3">
+  <img src="https://picsum.photos/400/450?4">
+  <img src="https://picsum.photos/400/320?5">
+</section>
+
+<script>
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>

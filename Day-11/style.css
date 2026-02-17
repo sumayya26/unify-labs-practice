@@ -1,0 +1,198 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0f0f1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ================= PARTICLE BACKGROUND ================= */
+.particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00f7ff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float linear infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  from {
+    transform: translateY(100vh) scale(0.5);
+  }
+  to {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+/* Alternate particle color */
+.particles span:nth-child(odd) {
+  background: #ff00ff;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ================= NEON TEXT ================= */
+.neon {
+  font-size: 4rem;
+  color: #00f7ff;
+  text-shadow:
+    0 0 5px #00f7ff,
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    0 0 40px #00f7ff,
+    0 0 80px #00f7ff;
+  animation: flicker 2s infinite alternate;
+}
+
+/* Neon flicker */
+@keyframes flicker {
+  0% { opacity: 1; }
+  45% { opacity: 0.9; }
+  50% { opacity: 0.6; }
+  55% { opacity: 0.9; }
+  100% { opacity: 1; }
+}
+
+/* ================= TYPEWRITER ================= */
+.typewriter {
+  margin-top: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00f7ff;
+  width: 0;
+  animation:
+    typing 4s steps(30) forwards,
+    blink 0.8s infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  to { width: 100%; }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  margin-top: 40px;
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #00f7ff;
+  color: #0f0f1a;
+  box-shadow: 0 0 20px #00f7ff,
+              0 0 40px #00f7ff;
+  transform: translateY(-3px);
+}
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 30px rgba(0,247,255,0.4);
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #00f7ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background: #00c3cc;
+}
+
+/* ================= MASONRY GALLERY ================= */
+.gallery {
+  padding: 100px 8%;
+  columns: 3 250px;
+  column-gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: 0.4s ease;
+}
+
+.gallery img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .neon {
+    font-size: 2.5rem;
+  }
+
+  .gallery {
+    columns: 1;
+  }
+}
