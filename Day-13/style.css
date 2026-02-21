@@ -1,0 +1,82 @@
+:root {
+  --primary: #ff6a00;
+  --dark: #0f172a;
+  --card: #1e293b;
+  --light: #ffffff;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--dark);
+  font-family: system-ui, sans-serif;
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: var(--radius);
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.output {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+}

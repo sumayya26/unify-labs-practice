@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logic Foundation - Day 13</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Logic Foundation App 🚀</h1>
+
+    <!-- Calculator Section -->
+    <section class="card">
+      <h2>Calculator Utility</h2>
+
+      <input type="number" id="num1" placeholder="Enter first number">
+      <input type="number" id="num2" placeholder="Enter second number">
+
+      <button onclick="calculate()">Calculate</button>
+
+      <div id="calcOutput" class="output"></div>
+    </section>
+
+    <!-- Magic 8 Ball Section -->
+    <section class="card">
+      <h2>Magic 8-Ball 🎱</h2>
+
+      <input type="text" id="userName" placeholder="Enter your name">
+      <button onclick="askMagic()">Ask Magic 8-Ball</button>
+
+      <div id="magicOutput" class="output"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
