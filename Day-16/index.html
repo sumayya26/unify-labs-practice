@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Text Formatter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📝 Smart Text Formatter</h1>
+    <p class="subtitle">Clean, Format & Analyze Your Text</p>
+
+    <textarea id="userText" placeholder="Enter your text here..."></textarea>
+
+    <div class="buttons">
+      <button onclick="formatTitleCase()">Title Case</button>
+      <button onclick="countVowels()">Count Vowels</button>
+      <button onclick="generateSecret()">Secret Message</button>
+    </div>
+
+    <div class="output-box">
+      <h3>Output</h3>
+      <p id="outputText"></p>
+    </div>
+
+    <div class="stats-box">
+      <h3>Text Statistics</h3>
+      <p id="stats"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
