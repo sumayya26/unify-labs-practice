@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXUS - Real-Time Data Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+
+<header>
+  <h1>🚀 NEXUS Data Hub</h1>
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search coins...">
+    <select id="sortSelect">
+      <option value="market_cap_desc">Sort by Market Cap</option>
+      <option value="price_desc">Sort by Price</option>
+      <option value="name_asc">Sort by Name</option>
+    </select>
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+</header>
+
+<div id="loader" class="loader hidden">Loading...</div>
+<div id="notification" class="notification hidden"></div>
+
+<main id="cardContainer"></main>
+
+<script type="module" src="./js/App.js"></script>
+</body>
+</html>
