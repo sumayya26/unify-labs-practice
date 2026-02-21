@@ -1,0 +1,83 @@
+:root {
+  --primary: #ff6a00;
+  --dark: #0f172a;
+  --card: #1e293b;
+  --light: #ffffff;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--dark);
+  font-family: system-ui, sans-serif;
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.game-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: var(--radius);
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  transition: var(--transition);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.restart {
+  background: #64748b;
+}
+
+#message {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#attempts {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
