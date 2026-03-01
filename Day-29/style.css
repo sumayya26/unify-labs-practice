@@ -1,0 +1,66 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  transition: 0.3s;
+}
+
+.dark {
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #111827;
+  color: white;
+}
+
+.editor {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editor input,
+.editor textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.editor button {
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.dark .card {
+  background: #1e293b;
+  color: white;
+}

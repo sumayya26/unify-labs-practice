@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ZENITH Blogger Core</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>ZENITH Blogger Core</h1>
+  <button id="toggleMode">🌙</button>
+</header>
+
+<section class="editor">
+  <input id="title" placeholder="Post Title">
+  <input id="category" placeholder="Category">
+  <textarea id="content" placeholder="Write your content..."></textarea>
+  <button onclick="createPost()">Publish</button>
+</section>
+
+<section id="posts" class="grid"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
